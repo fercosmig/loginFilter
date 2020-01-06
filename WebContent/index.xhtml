@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+
+	<f:metadata>
+		<f:event type="preRenderView" listener="#{lb.logout}" />
+	</f:metadata>
+
+	<title>Login PhaseListener</title>
+</h:head>
+
+<h:body>
+
+	<header> </header>
+
+	<div>
+
+		<h:form>
+			<h:messages></h:messages>
+			<table>
+				<thead>
+					<tr>
+						<th colspan="2">Formulário de login</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>user name:</td>
+						<td><h:inputText id="us" name="username" value="#{lb.usr}"
+								required="true" requiredMessage="User name is required"></h:inputText></td>
+					</tr>
+					<tr>
+						<td>password:</td>
+						<td><h:inputSecret id="pwd" name="password" value="#{lb.pwd}"
+								required="true" requiredMessage="User password is required"></h:inputSecret></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2"><h:commandButton id="env" name="btnenviar"
+								value="Enviar" action="#{lb.login}"></h:commandButton></td>
+					</tr>
+				</tfoot>
+			</table>
+		</h:form>
+
+	</div>
+
+	<footer> </footer>
+</h:body>
+</html>
